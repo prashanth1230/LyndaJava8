@@ -5,19 +5,17 @@
  */
 package com.example.javase8;
 
-import com.example.javase8.interfaces.InterfaceWithArgs;
-
 /**
  *
  * @author Prashanth
  */
-public class UseInterfaceWithArgs {
-
+public class UseRunnable {
+    
     public static void main(String[] args) {
-        InterfaceWithArgs obj = (v1, v2) -> {
-            int result = v1 * v2;
-            System.out.println("The resule is " + result);
-        };
-        obj.calculate(10, 5);
+        Runnable r1 = () -> System.out.println("Running Thread 1");
+        Runnable r2 = () -> System.out.println("Running Thread 2");
+        new Thread(r1).start();
+        new Thread(r2).start();
     }
+    
 }
