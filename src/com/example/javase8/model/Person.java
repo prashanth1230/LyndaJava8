@@ -51,4 +51,9 @@ public class Person {
     public String toString() {
         return this.name + "(" + this.age + ")";
     }
+
+    public static int compareAges(Person p1, Person p2) {
+        Integer age1 = p1.getAge();
+        return age1.compareTo(p2.getAge());
+    }
 }
